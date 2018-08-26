@@ -5,10 +5,13 @@ class Form extends Component {
         super(props);
 
         this.initialState = {
-            name: '',
-            job: '',
-            repetition: '',
-            rep: ''
+            exercise: '',
+            weight: '',
+            repetitions: '',
+            sets: '',
+            rpe: '',
+            'topset': '',
+            'rating': ''
         };
         this.state = this.initialState;
     }
@@ -27,20 +30,26 @@ class Form extends Component {
     }
 
     render() {
-        const {name, job, repetition, rpe } = this.state;
+        const {exercise, weight, sets, repetition, rpe, topset, rating } = this.state;
         return (
             <form>
                 <label>Exercise</label>
                 <input 
                     type="text"
-                    name="name"
-                    value={name}            
+                    name="exercise"
+                    value={exercise}            
                     onChange={this.handleChange}  />
                 <label>Weight</label>
                 <input 
                     type="text"
-                    name="job"
-                    value={job}
+                    name="weight"
+                    value={weight}
+                    onChange={this.handleChange}/>
+                <label>Sets</label>
+                <input 
+                    type="text"
+                    name="sets"
+                    value={sets}
                     onChange={this.handleChange}/>
                 <label>Repetition</label>
                 <input 
@@ -53,6 +62,18 @@ class Form extends Component {
                     type="text"
                     name="rpe"
                     value={rpe}
+                    onChange={this.handleChange}/>
+                <label>Top Set</label>
+                <input 
+                    type="text"
+                    name="topset"
+                    value={topset}
+                    onChange={this.handleChange}/>
+                <label>Rating</label>
+                <input 
+                    type="text"
+                    name="rating"
+                    value={rating}
                     onChange={this.handleChange}/>
                 <input 
                     type="button"
